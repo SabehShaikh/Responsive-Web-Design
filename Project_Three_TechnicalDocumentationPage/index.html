@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>React.js Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Getting_Started">Getting Started</a></li>
+            <li><a class="nav-link" href="#Components">Components</a></li>
+            <li><a class="nav-link" href="#Props">Props</a></li>
+            <li><a class="nav-link" href="#State">State</a></li>
+            <li><a class="nav-link" href="#Lifecycle_Methods">Lifecycle Methods</a></li>
+            <li><a class="nav-link" href="#Conditional_Rendering">Conditional Rendering</a></li>
+            <li><a class="nav-link" href="#Lists_and_Keys">Lists and Keys</a></li>
+            <li><a class="nav-link" href="#Hooks">Hooks</a></li>
+            <li><a class="nav-link" href="#Routing">Routing</a></li>
+            <li><a class="nav-link" href="#Context_API">Context API</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+
+        <section class="main-section" id="Introduction">
+            <header>
+                Introduction
+            </header>
+
+            <article>
+                <p>
+                    React.js, developed and maintained by Facebook, stands as a pivotal library in the realm of web
+                    development. It empowers developers to construct dynamic and interactive user interfaces with a
+                    declarative and component-based approach. Unlike traditional frameworks, React enables the creation
+                    of reusable UI components, each encapsulating its logic and state. This modular design not only
+                    enhances code maintainability but also fosters a more scalable and collaborative development
+                    process.
+                </p>
+                <p>
+                    At the core of React's efficiency lies the virtual DOM, a lightweight representation of the actual
+                    DOM. This allows React to selectively update only the components affected by state changes,
+                    minimizing the performance bottlenecks associated with constant DOM manipulation. React's one-way
+                    data flow ensures a predictable and efficient rendering process, facilitating the development of
+                    complex applications while maintaining a smooth user experience.
+                </p>
+                <p>
+                    Whether you are a seasoned developer or just embarking on your coding journey, React's simplicity
+                    and flexibility make it an ideal choice for building modern web applications. Its rich ecosystem,
+                    including state management libraries like Redux and tooling like Create React App, further
+                    solidifies React's position as a go-to solution for crafting robust and maintainable user
+                    interfaces.
+                </p>
+
+
+                <ul>
+                    <li>
+                        React's Component-Based Architecture: React revolutionizes client-side development by
+                        introducing a component-based architecture. Components, encapsulating their own logic and UI,
+                        can be easily reused throughout the application. This modular approach enhances code
+                        organization, facilitates collaboration among developers, and contributes to the overall
+                        maintainability of the project.
+                    </li>
+                    <li>
+                        Virtual DOM Optimization: React's innovative use of a virtual DOM significantly improves the
+                        efficiency of rendering in web applications. Instead of directly manipulating the actual DOM,
+                        React creates a virtual representation, allowing it to identify and update only the components
+                        affected by state changes. This optimization reduces the performance overhead associated with
+                        frequent DOM manipulations, resulting in faster and more responsive user interfaces.
+                    </li>
+                </ul>
+
+            </article>
+        </section>
+
+        <section class="main-section" id="Getting_Started">
+            <header>Getting Started</header>
+            <article>
+                <p>
+                    Ready to embark on your React journey? Let's kick things off with a simple example to get you
+                    started. Follow the steps below to create your first React component:
+                </p>
+
+                <ol>
+                    <li>
+                        Install React: If you haven't already, make sure to set up a React environment. You can do this
+                        by using a tool like Create React App or integrating React into an existing project.
+                    </li>
+                    <li>
+                        Create a React Component: In your project, create a new file (e.g., MyComponent.js) and write
+                        the following React code:
+                        <code>
+                    import React from 'react';
+
+                    function MyComponent() {
+                      return <div>Hello, I'm a React component!</div>;
+                    }
+                    
+                    export default MyComponent;
+                  </code>
+                    </li>
+                    <li>
+                        Run Your React App: Save the file and run your React application. If you're using Create React
+                        App, you can use the command <code>npm start</code> to launch your app in the development mode.
+                    </li>
+                </ol>
+                <p>
+                    That's it! You've just created and rendered your first React component. Feel free to explore and
+                    modify this component as you delve deeper into the world of React development.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Components">
+            <header>Components</header>
+            <article>
+                <p>
+                    React applications are built using components – modular, reusable pieces of code that encapsulate a
+                    part of your user interface. Components are the building blocks of a React application, and they can
+                    be simple or complex, depending on the functionality they encapsulate.
+                </p>
+
+                <p>
+                    In React, there are two main types of components: functional components and class components.
+                    Functional components are stateless and are mainly used for presenting UI, while class components
+                    can manage state and have access to lifecycle methods.
+                </p>
+
+                <p>
+                    Components can be composed to create larger, more complex user interfaces. This composability is one
+                    of the key strengths of React, allowing developers to build scalable and maintainable applications
+                    by breaking them down into smaller, manageable parts.
+                </p>
+
+                <p>
+                    As you delve into React development, understanding how to create, use, and compose components is
+                    fundamental. The following sections will guide you through working with both functional and class
+                    components, explaining their differences and use cases.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Props">
+            <header>Props</header>
+            <article>
+                <article>
+                    <p>
+                        Props, short for properties, are a fundamental concept in React that allows you to pass data from a
+                        parent
+                        component to a child component. They enable the communication between components, allowing you to
+                        customize and
+                        configure child components based on the needs of the parent.
+                    </p>
+                    <p>
+                        When a parent component renders a child component, it can pass data to the child component through
+                        props. Props
+                        are essentially read-only and should not be modified by the child component. This unidirectional
+                        flow of data
+                        ensures a clear and predictable data flow within your React application.
+                    </p>
+                </article>
+                
+
+                <code>
+                import React from 'react';
+          
+                // Child component that receives and displays a prop
+                const Greeting = (props) => {
+                  return (
+                    <span>
+                      Hello, {props.name}!
+                    </span>
+                  );
+                };
+          
+                // Parent component that renders the child component with a prop
+                const App = () => {
+                  return (
+                    <span>
+                      {/* Render the Greeting component and pass the name prop */}
+                      // Greeting name="John Doe" />
+                    </span>
+                  );
+                };
+          
+                export default App;
+              </code>
+
+                <span>
+                    Defining and using props is a key aspect of React development. In the upcoming sections, you will
+                    learn how to pass
+                    props to functional and class components, how to access them within the component, and how to
+                    leverage props to
+                    create dynamic and reusable components.
+                </span>
+            </article>
+        </section>
+
+        <section class="main-section" id="State">
+            <header>State</header>
+            <article>
+                <span>
+                    In React, state is a crucial concept for creating dynamic and interactive components. The state
+                    represents the
+                    current condition or data of a component and can be changed over time in response to user actions or
+                    other
+                    events. When the state of a component is updated, React automatically re-renders the component to
+                    reflect the
+                    changes.
+                </span>
+
+                <span>
+                    To use state in a functional component, you can leverage the useState hook provided by React. This
+                    hook allows
+                    you to declare state variables and provides a function to update them. Let's look at a simple
+                    example:
+                </span>
+
+                <code>import { useState } from 'react';</code>
+
+                <span>Declare a state variable 'count' with an initial value of 0</span>
+
+                <code>const [count, setCount] = useState(0);</code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Lifecycle_Methods">
+            <header>Lifecycle Methods</header>
+            <article>
+                <span>
+                    Lifecycle methods in React are special functions that are invoked at different points in the life of
+                    a
+                    functional component.
+                    They provide an opportunity to perform actions at specific phases, such as when a component is
+                    created,
+                    updated, or destroyed.
+                </span>
+
+                <span>
+                    One commonly used lifecycle method is <code>useEffect</code> It is called after the component has
+                    been
+                    rendered to the DOM.
+                    This is a good place to perform side effects, such as data fetching, subscriptions, or manually
+                    changing
+                    the DOM.
+                </span>
+
+                <code>
+              import React, { useEffect } from 'react';
+          
+              const MyComponent = () => {
+                useEffect(() => {
+                  // Perform side effects, API calls, etc.
+                  console.log('Component has been rendered!');
+                }, []);
+          
+                return <div>Hello, I'm a React component!</div>;
+              };
+          
+              export default MyComponent;
+            </code>
+
+                <span>
+                    Understanding the lifecycle methods is crucial for managing the behavior of your components
+                    throughout
+                    their existence.
+                </span>
+            </article>
+        </section>
+
+        <section class="main-section" id="Conditional_Rendering">
+            <header>Conditional Rendering</header>
+            <article>
+                <span>
+                    Conditional rendering in React allows you to control the display of components based on certain
+                    conditions.
+                    This is essential for building dynamic and interactive user interfaces where content can change
+                    based on
+                    user actions or data.
+                </span>
+
+                <span>
+                    One common pattern for conditional rendering is using the ternary operator within JSX to render
+                    different content based on a condition.
+                </span>
+
+                <code>
+              import React, { useState } from 'react';
+          
+              const MyComponent = () => {
+                const [isLoggedIn, setLoggedIn] = useState(false);
+          
+                return (
+                  <span>
+                    {isLoggedIn ? (
+                      <span>Welcome, User!</span>
+                    ) : (
+                      <span>Please log in to continue.</span>
+                    )}
+                  </span>
+                )
+              }
+          
+              export default MyComponent;
+            </code>
+
+                <span>
+                    In this example, the content displayed depends on the value of the `isLoggedIn` state. If true, it
+                    shows
+                    a welcome message; otherwise, it asks the user to log in.
+                </span>
+                <article>
+        </section>
+
+        <section class="main-section" id="Lists_and_Keys">
+            <header>Lists and Keys</header>
+            <article>
+                <span>
+                    In React, lists are used to render multiple elements dynamically. When rendering a list of items,
+                    each item should have a unique identifier, known as a "key". Keys help React identify which items
+                    have changed, are added, or are removed, improving performance and maintaining component state.
+                </span>
+
+                <span>
+                    Here's an example of rendering a list of items in React with keys:
+                </span>
+
+                <code>
+                import React from 'react';
+            
+                const MyList = () => {
+                  const items = ['Item 1', 'Item 2', 'Item 3'];
+            
+                  return (
+                    &lt;div&gt;
+                      {items.map((item, index) => (
+                        &lt;span key={index}&gt;{item}&lt;/span&gt;
+                      ))}
+                    &lt;/div&gt;
+                  );
+                };
+            
+                export default MyList;
+              </code>
+
+                <span>
+                    In this example, the `map` function is used to iterate over the array of items, and each item is
+                    rendered within a span element with a unique key.
+                </span>
+            </article>
+        </section>
+
+        <section class="main-section" id="Hooks">
+            <header>Hooks</header>
+            <article>
+                <span>
+                    React Hooks are functions that enable functional components to use state and other React features
+                    that
+                    were previously only available in class components. They provide a more direct way to interact with
+                    the
+                    React state and lifecycle features.
+                </span>
+
+                <span>
+                    Another commonly used hook is the `useContext` hook, which allows you to subscribe to React context
+                    without introducing nesting. Here's a simple example:
+                </span>
+
+                <code>
+              import React, { useContext } from 'react';
+          
+              // Create a context
+              const ThemeContext = React.createContext('light');
+          
+              // Use the context in a component
+              const ThemedComponent = () => {
+                const theme = useContext(ThemeContext);
+          
+                return <span>The current theme is {theme}</span>;
+              };
+          
+              // Wrap a part of your application with the context provider
+              const App = () => {
+                return (
+                  <ThemeContext.Provider value="dark">
+                    <ThemedComponent />
+                  </ThemeContext.Provider>
+                );
+              };
+          
+              export default App;
+            </code>
+
+                <span>
+                    In this example, the `useContext` hook is used to consume the current theme from a context, allowing
+                    components to dynamically adjust based on the theme.
+                </span>
+            </article>
+        </section>
+
+        <section class="main-section" id="Routing">
+            <header>Routing</header>
+            <article>
+                <span>
+                    Routing is a fundamental aspect of building single-page applications (SPAs) with React. It enables
+                    navigation between different views or components without the need for a full-page reload.
+                </span>
+
+                <span>
+                    React Router is a widely used library for implementing routing in React applications. Here's a brief
+                    example of how you can set up basic routing using React Router:
+                </span>
+                <code>
+                import React from 'react';
+                import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+            
+              </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Context_API">
+            <header>Context API</header>
+            <article>
+                <span>
+                    React's Context API allows you to share values, such as state or functions, across your React
+                    component
+                    tree without the need to pass props through every level of nesting.
+                </span>
+                <span>
+                    In this example, we've created a simple context named "MyContext" using createContext. We then have
+                    a
+                    provider component, MyContextProvider, which wraps around the part of the component tree where we
+                    want to
+                    share the context.
+                </span>
+                <span>
+                    The value provided by the context can be accessed in any child component using the useContext hook.
+                    For instance, we've consumed the context value in this component, and you can see the message:
+                    "Hello from Context!".
+                </span>
+            </article>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
